@@ -80,7 +80,7 @@ body {
   position: relative;
   width: 80%;
   max-width: 1000px;  /* Ограничиваем ширину */
-  height: 400px;  /* Уменьшаем высоту */
+  height: 500px;  /* Уменьшаем высоту */
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
