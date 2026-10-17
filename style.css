@@ -3,8 +3,8 @@
    ======================================== */
 
 header {
-  background-color: #1e1e1e;
-  color: #fff;
+  background-color: #fff;
+  color: #333;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
@@ -67,7 +67,7 @@ nav a:hover {
    ======================================== */
 
 body {
-  background-color: #1e1e1e;
+  background-color: #faf5ebf0;
   width: 75%;
   margin-left: auto;
   margin-right: auto;
