@@ -81,7 +81,7 @@ body {
 .slider-container {
   position: relative;
   width: 80%;
-  height: 450px;
+  height: 550px;
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
@@ -153,9 +153,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* ========================================
-   СТИЛИ ДЛЯ ГАЛЕРЕИ (РЕЦЕПТЫ)
-   ======================================== */
+/* СТИЛИ ДЛЯ ГАЛЕРЕИ (РЕЦЕПТЫ)*/
 
 .column-container {
   display: flex;
@@ -203,9 +201,7 @@ body {
   color: #ddd;
 }
 
-/* ========================================
-   СТИЛИ ДЛЯ ВИДЕО
-   ======================================== */
+/*СТИЛИ ДЛЯ ВИДЕО*/
 
 .video-container {
   width: 80%;
