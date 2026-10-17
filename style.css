@@ -79,7 +79,8 @@ body {
 .slider-container {
   position: relative;
   width: 80%;
-  height: 550px;
+  height: 500px;  /* ← нормальный размер */
+  max-height: 70vh;  /* ← не больше 70% высоты экрана */
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
