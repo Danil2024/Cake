@@ -22,9 +22,14 @@ header {
   text-align: right;
   opacity: 0;
   animation: fadeInUp 1.5s ease-out forwards;
-  font-size: 28px;
+  font-size: 44px; 
+  font-style: italic; 
+  font-weight: bold; 
   color: #ff6600;
   margin: 0 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  letter-spacing: 1px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 @keyframes fadeInUp {
