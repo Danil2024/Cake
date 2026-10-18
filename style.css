@@ -134,7 +134,7 @@ body {
    ======================================== */
 
 .text_o_nas {
-  color: #fff;
+  color: #170a0a;
   width: 80%;
   font-size: 18px;
   text-align: center;
@@ -231,7 +231,7 @@ body {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  background: #333333;
+  background: #696868;
   border-radius: 8px;
   border: 1px solid #a7401b;
 }
