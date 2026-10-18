@@ -64,7 +64,7 @@
             <p>Нежные медовые коржи, пропитанные сметанным кремом. 
             Классический рецепт, который знаком нам с детства. 
             Торт тает во рту и дарит ощущение уюта.</p>
-            <button class="recipe-btn">Рецепт</button>
+            <button class="recipe-btn" data-recipe="1">Рецепт</button>
         </div>
 
         <div class="column">
@@ -73,7 +73,7 @@
             <p>Хрустящие слоёные коржи с нежным заварным кремом. 
             Классика французской кондитерской, которая покоряет сердца сладкоежек. 
             Идеальный баланс текстуры и вкуса.</p>
-            <button class="recipe-btn">Рецепт</button>
+            <button class="recipe-btn" data-recipe="2">Рецепт</button>
         </div>
 
         <div class="column">
@@ -82,7 +82,7 @@
             <p>Кремовый чизкейк на песочной основе с ягодным соусом. 
             Нежная текстура и насыщенный вкус делают его фаворитом многих. 
             Идеальный десерт для любого случая.</p>
-            <button class="recipe-btn">Рецепт</button>
+            <button class="recipe-btn" data-recipe="3">Рецепт</button>
         </div>
 
       </div>
@@ -95,7 +95,7 @@
             <p>Итальянский десерт из печенья савоярди, пропитанного кофе, 
             с кремом из маскарпоне. Нежный, ароматный и невероятно вкусный. 
             Настоящая классика Италии.</p>
-            <button class="recipe-btn">Рецепт</button>
+            <button class="recipe-btn" data-recipe="4">Рецепт</button>
         </div>
 
         <div class="column">
@@ -104,7 +104,7 @@
             <p>Воздушные заварные пирожные с нежным кремом и шоколадной глазурью. 
             Французская классика, которая никогда не выходит из моды. 
             Идеальны к чаю или кофе.</p>
-            <button class="recipe-btn">Рецепт</button>
+            <button class="recipe-btn" data-recipe="5">Рецепт</button>
         </div>
 
         <div class="column">
@@ -113,7 +113,7 @@
             <p>Нежные миндальные пирожные с разнообразными начинками. 
             Яркие, красивые и невероятно вкусные. 
             Каждый макарун — это маленькое произведение искусства.</p>
-            <button class="recipe-btn">Рецепт</button>
+           <button class="recipe-btn" data-recipe="6">Рецепт</button>
         </div>
 
       </div>
@@ -164,5 +164,18 @@
     </div>
   </footer>
 
+  <!-- Модальное окно с рецептом -->
+<div id="recipe-modal" class="recipe-modal">
+  <div class="recipe-modal-content">
+    <span class="recipe-modal-close">&times;</span>
+    <h2 id="recipe-title">Название рецепта</h2>
+    <div class="recipe-body">
+      <h3>Ингредиенты:</h3>
+      <p id="recipe-ingredients">Список ингредиентов</p>
+      <h3>Приготовление:</h3>
+      <p id="recipe-steps">Шаги приготовления</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
