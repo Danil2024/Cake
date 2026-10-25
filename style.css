@@ -23,15 +23,16 @@ header {
   opacity: 0;
   animation: fadeInUp 1.5s ease-out forwards;
   font-size: 44px; 
-  font-style: italic; 
-  font-weight: bold; 
-  color: #ff6600;
+  font-style: italic; /* тип шрифта */
+  font-weight: bold;
+  color: #ff6600; /* цвет шрифта */
   margin: 0 20px;
-  font-family: 'Georgia', 'Times New Roman', serif;
-  letter-spacing: 1px; 
+  font-family: 'Georgia', 'Times New Roman', serif;  
+  letter-spacing: 1px; /* расстояние между буквами */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
+/* Плавная анимация появления заголовка при загрузке страницы */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -103,6 +104,7 @@ body {
   display: none;
 }
 
+/* Кнопки навигации слайдера. Абсолютное позиционирование (absolute) приклеивает их поверх картинки, а z-index поднимает наверх */
 .prev-button, .next-button {
   position: absolute;
   top: 50%;
@@ -174,6 +176,7 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Эффект при наведении на карточку рецепта. transform сдвигает блок вверх, а transition делает это движение плавным */
 .column:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(167, 64, 27, 0.4);
@@ -361,6 +364,7 @@ footer p {
 
 /* СТИЛИ ДЛЯ ПОЛНОЭКРАННОГО ИЗОБРАЖЕНИЯ */
 
+/* Полноэкранный режим и модальные окна. position: fixed фиксирует их на экране, высокий z-index перекрывает весь остальной контент */
 #fullscreen-container {
   display: none;
   position: fixed;
