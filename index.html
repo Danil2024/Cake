@@ -18,7 +18,7 @@
 
     <h1 class="site-title">Сладкая мастерская</h1>
 
-    <nav> // меню навигации
+    <nav> 
         <ul>
             <li><a href="#section1">О кондитере</a></li>
             <li><a href="#section2">Рецепты</a></li>
@@ -26,7 +26,7 @@
         </ul>
     </nav>
   </header>
- //  Слайдер с фотографиями. Картинки переключаются через JavaScript, а по клику открываются на весь экран
+ 
     <div class="slider-container"> 
         <div class="slider">
           <img src="img/14.jpg" onclick="openFullscreenImage(this)">
@@ -39,7 +39,7 @@
         <button class="next-button" aria-label="Посмотреть следующий слайд">&gt;</button>
     </div>
 
-    // id используется для уникального элемента
+  
     <section id="section1">
 
       <div class="text_o_nas">
@@ -57,7 +57,7 @@
 
     </section>
 
-    // id используется для уникального элемента
+   
     <section id="section2">
      
       <div class="column-container">
@@ -68,7 +68,6 @@
             <p>Нежные медовые коржи, пропитанные сметанным кремом. 
             Классический рецепт, который знаком нам с детства. 
             Торт тает во рту и дарит ощущение уюта.</p>
-            // Кнопка "Рецепт". Атрибут data-recipe хранит номер рецепта, который JS использует для подстановки текста в модальное окно
             <button class="recipe-btn" data-recipe="1">Рецепт</button>
         </div>
 
@@ -78,7 +77,6 @@
             <p>Хрустящие слоёные коржи с нежным заварным кремом. 
             Классика французской кондитерской, которая покоряет сердца сладкоежек. 
             Идеальный баланс текстуры и вкуса.</p>
-            // Кнопка "Рецепт". Атрибут data-recipe хранит номер рецепта, который JS использует для подстановки текста в модальное окно
             <button class="recipe-btn" data-recipe="2">Рецепт</button>
         </div>
 
@@ -136,7 +134,6 @@
 
     </section>
 
-    // id используется для уникального элемента
     <section id="section3">
 
     <form class="obratnuj-zvonok" autocomplete="off" action="email.php" method="post">
