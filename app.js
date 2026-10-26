@@ -186,4 +186,22 @@ document.addEventListener('keydown', function(e) {
     document.getElementById('recipe-modal').classList.remove('active');
     document.body.style.overflow = '';
   }
-});
+})
+
+// === Индикаторы слайдов ===
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, index) => {
+    if (index === currentIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function goToSlide(index) {
+  currentIndex = index;
+  updateSlider();
+  updateDots();
+};
