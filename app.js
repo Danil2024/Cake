@@ -242,6 +242,12 @@ function goToSlide(index) {
   updateDots();
 }
 
+function goToSlide(index) {
+  currentIndex = index;
+  updateSlider();
+  updateDots();
+}
+
 // Обновляем функцию updateSlider — добавь в её конец строку:
 // updateDots();
 
