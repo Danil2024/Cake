@@ -226,12 +226,12 @@ document.addEventListener('keydown', function(e) {
 
 // === Индикаторы слайдов ===
 function updateDots() {
-  const dots = document.querySelectorAll('.dot');
-  dots.forEach((dot, index) => {
+  const indicators = document.querySelectorAll('.indicator');
+  indicators.forEach((indicator, index) => {
     if (index === currentIndex) {
-      dot.classList.add('active');
+      indicator.classList.add('active');
     } else {
-      dot.classList.remove('active');
+      indicator.classList.remove('active');
     }
   });
 }
