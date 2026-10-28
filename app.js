@@ -30,6 +30,7 @@ nextButton.addEventListener('click', showNextSlide);
 function showPreviousSlide() {
     slideIndex = (slideIndex - 1 + slideCount) % slideCount; // зацикливание слайдов
     updateSlider();
+    updateDots();
 }
 
 // Показать следующий слайд
@@ -67,7 +68,7 @@ function openFullscreenImage(element) {
     fullscreenImage.src = element.src;
 
     // Показываем контейнер 
-    fullscreenContainer.style.display = 'block';
+    fullscreenContainer.style.display = 'flex';
 }
 
 // Закрытие полноэкранного просмотра
@@ -204,4 +205,7 @@ function goToSlide(index) {
   currentIndex = index;
   updateSlider();
   updateDots();
-};
+}
+
+// Обновляем функцию updateSlider — добавь в её конец строку:
+// updateDots();
