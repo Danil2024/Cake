@@ -582,3 +582,81 @@ footer p {
   color: #fff;
   transform: scale(1.15);
 }
+
+/* Точки-индикаторы под слайдером */
+.slider-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin: 0 5px;
+  background-color: #e0d5c7;
+  color: #3e2723;
+  border-radius: 50%;
+  line-height: 35px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.dot:hover {
+  background-color: #ff6600;
+  color: #fff;
+}
+
+.dot.active {
+  background-color: #ff6600;
+  color: #fff;
+  transform: scale(1.15);
+}
+
+/* Стили для капчи */
+.captcha-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#captcha-canvas {
+  background-color: #f0e6dc;
+  border: 1px solid #d4a574;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.captcha-refresh {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.captcha-refresh:hover {
+  background-color: #e55a00;
+  transform: rotate(180deg);
+}
+
+.error-message {
+  color: red;
+  font-size: 13px;
+  display: none;
+  margin-top: 5px;
+}
+
+.input-error {
+  border-color: red !important;
+  background-color: #ffe0e0 !important;
+}

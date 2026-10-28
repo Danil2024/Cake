@@ -33,6 +33,12 @@
           <img src="img/15.jpg" onclick="openFullscreenImage(this)">
           <img src="img/3.jpg" onclick="openFullscreenImage(this)">
           <img src="img/16.jpg" onclick="openFullscreenImage(this)">
+          <div class="slider-dots">
+      <span class="dot active" onclick="goToSlide(0)">1</span>
+      <span class="dot" onclick="goToSlide(1)">2</span>
+      <span class="dot" onclick="goToSlide(2)">3</span>
+      <span class="dot" onclick="goToSlide(3)">4</span>
+    </div>
         </div>
         
         <button class="prev-button" aria-label="Посмотреть предыдущий слайд">&lt;</button>
@@ -159,6 +165,16 @@
             <input type="text" name="message">
           </div>
 
+          <!-- Блок капчи -->
+<div>
+  <label>Введите код с картинки <span>*</span></label>
+  <div class="captcha-container">
+    <canvas id="captcha-canvas" width="120" height="40"></canvas>
+    <button type="button" class="captcha-refresh" onclick="generateCaptcha()" title="Обновить капчу">↻</button>
+  </div>
+  <input type="text" id="captcha-input" required placeholder="Введите код">
+  <span class="error-message" id="captcha-error">Неверный код</span>
+</div>
           <input class="bot-send-mail" type="submit" value="Отправить заявку">
         </div>
     </form>

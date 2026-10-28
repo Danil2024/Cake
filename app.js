@@ -42,14 +42,14 @@ function showNextSlide() {
 // 4. ФУНКЦИЯ ОБНОВЛЕНИЯ ОТОБРАЖЕНИЯ СЛАЙДЕРА
 
 function updateSlider() {
-    // Перебираем все слайды
-    slides.forEach((slide, index) => {
-        if (index === slideIndex) {
-            slide.style.display = 'block';
-        } else {
-            slide.style.display = 'none';
-        }
-    });
+  sliderImages.forEach((img, index) => {
+    if (index === currentIndex) {
+      img.style.display = 'block';
+    } else {
+      img.style.display = 'none';
+    }
+  });
+  updateDots();  // ← ЭТУ СТРОКУ ДОБАВИТЬ
 }
 
 // Запуск слайдера при загрузке страницы 
@@ -91,6 +91,41 @@ function scrollFunction() {
     } else {
         document.getElementById('scrollToTopButton').style.display = 'none';
     }
+}
+
+function validateForm() {
+  const phone = document.getElementById('phone');
+  const captcha = document.getElementById('captcha-input');
+  let isValid = true;
+
+  // Сбрасываем старые ошибки
+  phone.classList.remove('input-error');
+  captcha.classList.remove('input-error');
+  document.getElementById('captcha-error').style.display = 'none';
+
+  // Проверка телефона
+  const phoneValue = phone.value.trim();
+  const phoneRegex = /^\+?\d{10,12}$/;
+  
+  if (!phoneRegex.test(phoneValue)) {
+    phone.classList.add('input-error');
+    alert('Номер телефона должен содержать только цифры и начинаться с + (например: +79991234567)');
+    isValid = false;
+  }
+
+  // Проверка капчи
+  if (!validateCaptcha()) {
+    isValid = false;
+  }
+
+  // Если всё ок
+  if (isValid) {
+    alert('Заявка успешно отправлена! Мы свяжемся с вами.');
+    phone.value = '';
+    captcha.value = '';
+    document.getElementById('message').value = '';
+    generateCaptcha(); // Генерируем новую капчу после успешной отправки
+  }
 }
 
 // При клике на кнопку "Наверх" — плавная прокрутка
@@ -209,3 +244,93 @@ function goToSlide(index) {
 
 // Обновляем функцию updateSlider — добавь в её конец строку:
 // updateDots();
+
+// === Управление точками-индикаторами ===
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, index) => {
+    if (index === currentIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function goToSlide(index) {
+  currentIndex = index;
+  updateSlider();
+  updateDots();
+}
+
+
+// === ГЕНЕРАЦИЯ И ПРОВЕРКА КАПЧИ ===
+let captchaCode = '';
+
+function generateCaptcha() {
+  const canvas = document.getElementById('captcha-canvas');
+  const ctx = canvas.getContext('2d');
+  
+  // Очищаем canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Генерируем случайный код из 4 символов (цифры и буквы)
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+  captchaCode = '';
+  for (let i = 0; i < 4; i++) {
+    captchaCode += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  
+  // Рисуем фон с шумом
+  ctx.fillStyle = '#f0e6dc';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+  // Добавляем случайные линии для усложнения
+  for (let i = 0; i < 5; i++) {
+    ctx.strokeStyle = `rgba(${Math.random() * 200}, ${Math.random() * 200}, ${Math.random() * 200}, 0.3)`;
+    ctx.beginPath();
+    ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+    ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+    ctx.stroke();
+  }
+  
+  // Рисуем текст капчи
+  ctx.font = 'bold 24px Arial';
+  ctx.fillStyle = '#3e2723';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  
+  // Добавляем небольшое искажение для каждого символа
+  for (let i = 0; i < captchaCode.length; i++) {
+    const x = 20 + i * 25;
+    const y = 20 + (Math.random() - 0.5) * 10;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate((Math.random() - 0.5) * 0.3);
+    ctx.fillText(captchaCode[i], 0, 0);
+    ctx.restore();
+  }
+}
+
+function validateCaptcha() {
+  const input = document.getElementById('captcha-input');
+  const errorMsg = document.getElementById('captcha-error');
+  
+  if (input.value.trim().toLowerCase() !== captchaCode.toLowerCase()) {
+    input.classList.add('input-error');
+    errorMsg.style.display = 'block';
+    generateCaptcha(); // Генерируем новую капчу при ошибке
+    input.value = '';
+    return false;
+  } else {
+    input.classList.remove('input-error');
+    errorMsg.style.display = 'none';
+    return true;
+  }
+}
+
+// Генерируем капчу при загрузке страницы
+generateCaptcha();
+
+// Обновляем капчу при клике на canvas
+document.getElementById('captcha-canvas').addEventListener('click', generateCaptcha);
