@@ -340,3 +340,5 @@ generateCaptcha();
 
 // Обновляем капчу при клике на canvas
 document.getElementById('captcha-canvas').addEventListener('click', generateCaptcha);
+
+updateSlider();
