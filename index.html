@@ -27,30 +27,25 @@
     </nav>
   </header>
  
-    <div class="slider-container"> 
-        <div class="slider">
-          <img src="img/14.jpg" onclick="openFullscreenImage(this)">
-          <img src="img/15.jpg" onclick="openFullscreenImage(this)">
-          <img src="img/3.jpg" onclick="openFullscreenImage(this)">
-          <img src="img/16.jpg" onclick="openFullscreenImage(this)">
-          <div class="slider-dots">
-     <span class="indicator active" onclick="goToSlide(0)"></span>
-  <span class="indicator" onclick="goToSlide(1)"></span>
-  <span class="indicator" onclick="goToSlide(2)"></span>
-  <span class="indicator" onclick="goToSlide(3)"></span>
+<div class="slider-container">
+    <div class="slider">
+        <img src="img/14.jpg" onclick="openFullscreenImage(this)">
+        <img src="img/15.jpg" onclick="openFullscreenImage(this)">
+        <img src="img/3.jpg" onclick="openFullscreenImage(this)">
+        <img src="img/16.jpg" onclick="openFullscreenImage(this)">
     </div>
-        </div>
-        
-        <button class="prev-button" aria-label="Посмотреть предыдущий слайд">&lt;</button>
-        <button class="next-button" aria-label="Посмотреть следующий слайд">&gt;</button>
-        <!-- Индикаторы слайдов (точки с номерами) -->
-<div class="slider-dots">
-  <span class="dot active" onclick="goToSlide(0)">1</span>
-  <span class="dot" onclick="goToSlide(1)">2</span>
-  <span class="dot" onclick="goToSlide(2)">3</span>
-  <span class="dot" onclick="goToSlide(3)">4</span>
+    
+    <button class="prev-button" aria-label="Посмотреть предыдущий слайд">&lt;</button>
+    <button class="next-button" aria-label="Посмотреть следующий слайд">&gt;</button>
+    
+    <!-- Тонкие полоски-индикаторы (ТОЛЬКО ОДИН БЛОК!) -->
+    <div class="slider-indicators">
+        <span class="indicator active" onclick="goToSlide(0)"></span>
+        <span class="indicator" onclick="goToSlide(1)"></span>
+        <span class="indicator" onclick="goToSlide(2)"></span>
+        <span class="indicator" onclick="goToSlide(3)"></span>
+    </div>
 </div>
-    </div>
 
   
     <section id="section1">
