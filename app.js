@@ -54,7 +54,7 @@ document.querySelector('.next-button').addEventListener('click', showNextSlide);
 // Запуск слайдера при загрузке
 updateSlider();
 // Автоматическое переключение каждые 5 секунд
-/*setInterval(showNextSlide, 5000);*/
+setInterval(showNextSlide, 5000);
 
 
 
