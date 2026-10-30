@@ -1,6 +1,6 @@
-// ==========================================
+
 // 1. СЛАЙДЕР
-// ==========================================
+
 const slides = document.querySelectorAll('.slider img');
 let slideIndex = 0;
 const slideCount = slides.length;
@@ -54,12 +54,12 @@ document.querySelector('.next-button').addEventListener('click', showNextSlide);
 // Запуск слайдера при загрузке
 updateSlider();
 // Автоматическое переключение каждые 5 секунд
-setInterval(showNextSlide, 5000);
+/*setInterval(showNextSlide, 5000);*/
 
 
-// ==========================================
+
 // 2. ПОЛНОЭКРАННЫЙ ПРОСМОТР ИЗОБРАЖЕНИЙ
-// ==========================================
+
 function openFullscreenImage(element) {
     const fullscreenContainer = document.getElementById('fullscreen-container');
     const fullscreenImage = document.getElementById('fullscreen-image');
@@ -73,9 +73,8 @@ function closeFullscreenImage() {
 }
 
 
-// ==========================================
 // 3. КНОПКА "НАВЕРХ"
-// ==========================================
+
 window.onscroll = function() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         document.getElementById('scrollToTopButton').style.display = 'block';
@@ -89,9 +88,9 @@ document.getElementById('scrollToTopButton').addEventListener('click', function(
 });
 
 
-// ==========================================
+
 // 4. МОДАЛЬНОЕ ОКНО С РЕЦЕПТАМИ
-// ==========================================
+
 const recipes = {
   1: {
     title: "Медовик классический",
@@ -170,9 +169,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-// ==========================================
 // 5. КАПЧА И ВАЛИДАЦИЯ ФОРМЫ
-// ==========================================
 let captchaCode = '';
 
 function generateCaptcha() {
