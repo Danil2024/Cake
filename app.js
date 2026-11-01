@@ -15,6 +15,7 @@ function updateSlider() {
         }
     });
     updateDots(); // Обновляем индикаторы
+    updateCounter(); // Обновляем счетчик
 }
 
 // Показать следующий слайд
@@ -269,3 +270,11 @@ document.querySelector('.obratnuj-zvonok').addEventListener('submit', validateFo
 // Генерируем капчу при загрузке
 generateCaptcha();
 document.getElementById('captcha-canvas').addEventListener('click', generateCaptcha);
+
+// Обновление счётчика слайдов (1 / 4, 2 / 4 и т.д.)
+function updateCounter() {
+    const counter = document.querySelector('.slide-counter');
+    if (counter) {
+        counter.textContent = `${slideIndex + 1} / ${slideCount}`;
+    }
+}
