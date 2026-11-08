@@ -235,10 +235,10 @@ body {
 /* СТИЛИ ДЛЯ ФОРМЫ ОБРАТНОЙ СВЯЗИ */
 
 .obratnuj-zvonok {
-  width: 100%;
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 25px;
+  width: 90%;
+  max-width: 380px;
+  margin: 30px auto;
+  padding: 20px;
   background: #fff;  /* Белый фон */
   border-radius: 10px;
   border: 1px solid #f0e6dc;  /* Мягкая кремовая граница */
@@ -253,7 +253,7 @@ body {
 }
 
 .form-zvonok div {
-  padding: 8px 0;
+  padding: 5px 0;
 }
 
 .form-zvonok label {
@@ -271,14 +271,14 @@ body {
 .form-zvonok input {
   display: block;
   width: 100%;
-  padding: 10px 12px;
+  padding: 8px 10px;
   margin-top: 5px;
   color: #333;
   background-color: #faf3eb;  /* Кремовый фон полей */
   border: 1px solid #e0d5c7;  /* Мягкая граница */
   border-radius: 5px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 13px;
   transition: border-color 0.3s;
 }
 
@@ -296,12 +296,12 @@ body {
 
 .bot-send-mail {
   width: 100%;
-  padding: 14px 18px;
-  margin-top: 15px;
+  padding: 12px 16px;
+  margin-top: 12px;
   background-color: #fff;  /* Белый фон по умолчанию */
   color: #ff6600;  /* Оранжевый текст */
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   text-transform: uppercase;
   border: 2px solid #ff6600;  /* Оранжевая рамка */
   border-radius: 8px;
