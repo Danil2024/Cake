@@ -230,8 +230,11 @@ function validateCaptcha() {
     }
 }
 
-function validateForm(event) {
-    event.preventDefault(); // Предотвращаем стандартную отправку формы
+// Обработка отправки формы через Formspree
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', async function(event) {
+    event.preventDefault();
     
     const phone = document.querySelector('input[name="phone"]');
     const captcha = document.getElementById('captcha-input');
@@ -250,19 +253,38 @@ function validateForm(event) {
         isValid = false;
     }
 
-    if (!validateCaptcha()) {
+    if (captcha.value.trim().toLowerCase() !== captchaCode.toLowerCase()) {
+        captcha.classList.add('input-error');
+        document.getElementById('captcha-error').style.display = 'block';
+        generateCaptcha();
+        captcha.value = '';
         isValid = false;
     }
 
     if (isValid) {
-        alert('Заявка успешно отправлена! Мы свяжемся с вами.');
-        phone.value = '';
-        captcha.value = '';
-        document.querySelector('input[name="message"]').value = '';
-        document.querySelector('input[name="name"]').value = '';
-        generateCaptcha();
+        const formData = new FormData(contactForm);
+        
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                alert('Заявка успешно отправлена! Мы свяжемся с вами.');
+                contactForm.reset();
+                generateCaptcha();
+            } else {
+                alert('Произошла ошибка при отправке. Попробуйте позже.');
+            }
+        } catch (error) {
+            alert('Ошибка сети. Проверьте подключение к интернету.');
+        }
     }
-}
+});
 
 // Привязываем валидацию к форме
 document.querySelector('.obratnuj-zvonok').addEventListener('submit', validateForm);
