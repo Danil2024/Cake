@@ -235,14 +235,15 @@ body {
 /* СТИЛИ ДЛЯ ФОРМЫ ОБРАТНОЙ СВЯЗИ */
 
 .obratnuj-zvonok {
-  width: 90%;
-  max-width: 320px;
-  margin: 20px auto;
-  padding: 15px;
-  background: #fff;  /* Белый фон */
+  width: 320px !important;  /* Фиксированная ширина */
+  max-width: 320px !important;
+  margin: 20px auto !important;  /* Центрируем */
+  padding: 15px !important;
+  background: #fff;
   border-radius: 10px;
-  border: 1px solid #f0e6dc;  /* Мягкая кремовая граница */
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);  /* Лёгкая тень */
+  border: 1px solid #f0e6dc;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 .form-zvonok {
@@ -679,4 +680,22 @@ footer p {
   color: #5d4037;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+/* Принудительное сужение формы */
+.form-zvonok {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.form-zvonok input {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.bot-send-mail {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
