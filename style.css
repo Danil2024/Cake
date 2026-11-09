@@ -662,7 +662,6 @@ footer p {
 
 .captcha-refresh:hover {
   background-color: #e55a00;
-  transform: rotate(180deg);
 }
 
 .error-message {

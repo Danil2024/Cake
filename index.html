@@ -143,38 +143,37 @@
 
     </section>
 
-    <section id="section3">
-
-    <form class="obratnuj-zvonok" autocomplete="off" action="email.php" method="post"></form>
-        <div class="form-zvonok">  
+        <section id="section3">
+        <form class="obratnuj-zvonok" autocomplete="off" onsubmit="return false;">
+            <div class="form-zvonok">  
          
-          <div>
-            <label>Имя <span>*</span></label>
-            <input type="text" name="name" required>
-          </div>
-          <div>
-            <label>Номер телефона <span>*</span></label>
-            <input type="text" name="phone" required>
-          </div>
-          <div>
-            <label>Сообщение</label>
-            <input type="text" name="message">
-          </div>
+                <div>
+                    <label>Имя <span>*</span></label>
+                    <input type="text" name="name" required>
+                </div>
+                <div>
+                    <label>Номер телефона <span>*</span></label>
+                    <input type="text" name="phone" required>
+                </div>
+                <div>
+                    <label>Сообщение</label>
+                    <input type="text" name="message">
+                </div>
 
-          <!-- Блок капчи -->
-<div>
-  <label>Введите код с картинки <span>*</span></label>
-  <div class="captcha-container">
-    <canvas id="captcha-canvas" width="120" height="40"></canvas>
-    <button type="button" class="captcha-refresh" onclick="generateCaptcha()" title="Обновить капчу">↻</button>
-  </div>
-  <input type="text" id="captcha-input" required placeholder="Введите код">
-  <span class="error-message" id="captcha-error">Неверный код</span>
-</div>
-          <button type="button" class="bot-send-mail" onclick="validateForm(event)">Отправить заявку</button>
-        </div>
-    </form>
-
+                <!-- Блок капчи -->
+                <div>
+                    <label>Введите код с картинки <span>*</span></label>
+                    <div class="captcha-container">
+                        <canvas id="captcha-canvas" width="120" height="40"></canvas>
+                        <button type="button" class="captcha-refresh" onclick="generateCaptcha()" title="Обновить капчу">↻</button>
+                    </div>
+                    <input type="text" id="captcha-input" required placeholder="Введите код">
+                    <span class="error-message" id="captcha-error">Неверный код</span>
+                </div>
+                
+                <button type="button" class="bot-send-mail" onclick="validateForm(event)">Отправить заявку</button>
+            </div>
+        </form>
     </section>
 
     <button id="scrollToTopButton">Вверх</button>
