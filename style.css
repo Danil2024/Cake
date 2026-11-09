@@ -235,17 +235,21 @@ body {
 /* СТИЛИ ДЛЯ ФОРМЫ ОБРАТНОЙ СВЯЗИ */
 
 .obratnuj-zvonok {
-  width: 400px;
-  margin: 40px auto;
-  padding: 25px;
+  width: 400px !important;
+  max-width: 400px !important;
+  margin: 40px auto !important;
+  padding: 25px !important;
   background: #fff;
   border-radius: 10px;
   border: 1px solid #f0e6dc;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box !important;
+  overflow: hidden;  /* ← ДОБАВЬ ЭТУ СТРОКУ */
 }
 
 .form-zvonok {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   display: flex;
   flex-direction: column;
   color: #333;
@@ -269,15 +273,16 @@ body {
 
 .form-zvonok input {
   display: block;
-  width: 100%;
-  padding: 6px 8px;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 8px 10px;
   margin-top: 3px;
   color: #333;
-  background-color: #faf3eb;  /* Кремовый фон полей */
-  border: 1px solid #e0d5c7;  /* Мягкая граница */
+  background-color: #faf3eb;
+  border: 1px solid #e0d5c7;
   border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 12px;
+  box-sizing: border-box !important;
+  font-size: 13px;
   transition: border-color 0.3s;
 }
 
@@ -294,20 +299,22 @@ body {
 }
 
 .bot-send-mail {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   padding: 10px 14px;
   margin-top: 8px;
-  background-color: #fff;  /* Белый фон по умолчанию */
-  color: #ff6600;  /* Оранжевый текст */
+  background-color: #fff;
+  color: #ff6600;
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;
-  border: 2px solid #ff6600;  /* Оранжевая рамка */
+  border: 2px solid #ff6600;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   letter-spacing: 1px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box !important;
 }
 
 .bot-send-mail:hover {
@@ -680,20 +687,25 @@ footer p {
   letter-spacing: 1px;
 }
 
-/* Принудительное сужение формы */
-.form-zvonok {
-  width: 100% !important;
-  max-width: 100% !important;
+.obratnuj-zvonok {
+  width: 400px !important;
+  max-width: 400px !important;
+  margin: 40px auto !important;
+  padding: 25px !important;
+  background: #fff !important;
+  border-radius: 10px !important;
+  border: 1px solid #f0e6dc !important;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
 }
 
-.form-zvonok input {
-  width: 100% !important;
-  max-width: 100% !important;
+.obratnuj-zvonok * {
   box-sizing: border-box !important;
 }
 
-.bot-send-mail {
+.obratnuj-zvonok input,
+.obratnuj-zvonok button {
   width: 100% !important;
   max-width: 100% !important;
-  box-sizing: border-box !important;
 }
